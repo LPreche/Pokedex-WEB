@@ -6,5 +6,6 @@
 .content {
     padding: 1rem;
     background-color: #fff;
-    width: 100vh;
+    width: 100vw;
+    height: 100vh;
 }

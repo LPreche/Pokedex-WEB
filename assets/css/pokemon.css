@@ -1,7 +1,7 @@
 
 .pokemons {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -59,11 +59,11 @@
             height: 100vh;
         }
 }
-@media screen and (min-width: 380) {
+/* @media screen and (min-width: 380px) {
     .pokemons {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
         }
-}
+} */
 
 @media screen and (min-width: 576px) {
     .pokemons {
