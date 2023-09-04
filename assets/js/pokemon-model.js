@@ -8,4 +8,7 @@ class Pokemon {
     specie;
     height;
     weight;
+    ability
+    abilities = []
+
 }

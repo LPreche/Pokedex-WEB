@@ -21,7 +21,7 @@ function getSpecieFromURL(pokeSpecies){
 }
 
 function convertPokemonDetailToPokemon(pokeDetail) {
-   
+    console.log(pokeDetail)
     const pokemon = new Pokemon();
     pokemon.number = pokeDetail.id;
     pokemon.name = pokeDetail.name;
@@ -35,6 +35,12 @@ function convertPokemonDetailToPokemon(pokeDetail) {
 
     pokemon.height = pokeDetail.height;
     pokemon.weight = pokeDetail.weight;
+
+    const abilities = pokeDetail.abilities.map((abilitySlot) => abilitySlot.ability.name);
+    const [ability] =  abilities
+
+    pokemon.abilities = abilities;
+    pokemon.ability = ability;
 
     return getSpecieFromURL(pokeDetail) .then((specie) => {
         pokemon.specie = specie

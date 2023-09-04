@@ -2,7 +2,7 @@ const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
 const maxRecords = 151;
-const limit = 5;
+const limit = 20;
 let offset = 0;
 
 function loadPokemonItens(offset, limit) {
@@ -20,13 +20,11 @@ function loadPokemonItens(offset, limit) {
                 <img src="${pokemon.photo}" alt="${pokemon.name}">
             </div>
             <div class="pokemonInfo">
-                
-                    <a href="./pokemon-stats.html?id=${pokemon.number}">
-                        <button id="pokemonInfoButton" type="button">
-                            Stats
-                        </button>
-                    </a>
-                
+                <a href="./pokemon-stats.html?id=${pokemon.number}">
+                    <button id="pokemonInfoButton" type="button">
+                        Stats
+                    </button>
+                </a>
             </div>
         </li>
 
@@ -38,18 +36,21 @@ function loadPokemonItens(offset, limit) {
 
 loadPokemonItens(offset, limit)
 
-loadMoreButton.addEventListener('click', () => {
-    offset += limit
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY + window.innerHeight
+    const documentHeight = document.documentElement.offsetHeight
 
-    qtdRecordNextPage = offset + limit
-    if(qtdRecordNextPage >= maxRecords){
-        const newLimit = maxRecords - offset
-        loadPokemonItens(offset, newLimit)
-
-        loadMoreButton.parentElement.removeChild(loadMoreButton)
-    }else{
-        loadPokemonItens(offset, limit)
+    if(scrollPosition >= documentHeight){
+        offset += limit
+        qtdRecordNextPage = offset + limit
+        if(qtdRecordNextPage >= maxRecords){
+            const newLimit = maxRecords - offset
+            loadPokemonItens(offset, newLimit)
+            
+            // loadMoreButton.parentElement.removeChild(loadMoreButton)
+        }else{
+            loadPokemonItens(offset, limit)
+        }
     }
-    
 })
 

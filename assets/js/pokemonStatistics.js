@@ -35,7 +35,7 @@ function loadPokemonStats(pokemonId){
                             <li>${pokemon.specie}</li>
                             <li>${(pokemon.height)/10} cm</li>
                             <li>${(pokemon.weight)/10} Kg</li>
-                            <li>Overgrow, Chlorophyll</li>
+                            <li>${pokemon.abilities.map((ability) => ` ${ability}`)}</li>
                         </ol>
                     </div>
                 </div>
