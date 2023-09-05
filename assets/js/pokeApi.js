@@ -48,7 +48,6 @@ function convertPokemonDetailToPokemon(pokeDetail) {
     })
 }
 
-
 pokeApi.getPokemonsDetail = (pokemon) => {
     return fetch(pokemon.url)
         .then((response) => response.json())
