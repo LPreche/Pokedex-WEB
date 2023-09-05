@@ -130,30 +130,9 @@
     height: 70px;
 }
 
-.pokemonInfo {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    align-items: center;
-    width: 100%;
-    padding: .5rem 0;
-    
-}
-
-.pokemonInfo button {
-    background-color: #6c79db;
-    color: #fff;
-    padding: .2rem;
-    border-radius: .4rem;
-    font-size: 12px;
-    width: 5.2rem;
-}
-
-.pokemonInfo button a {
-    color: #fff;
+.pokemonInfo{
     text-decoration: none;
 }
-
 
 .pagination {
     display: flex;
